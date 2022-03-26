@@ -90,7 +90,7 @@ export const TodoStats = () => {
         if(el.status == "Completed")
             completed++;
         else pending++;
-        if(el.priority == "Critical")
+        if(el.priority == "Critical" && el.status == "Pending")
             critical++;
     });
 
@@ -104,7 +104,7 @@ export const TodoStats = () => {
             <Container>
                 <BoldBigger>Taskque</BoldBigger>
                 <Larger>Keep track of your daily targets</Larger>
-                <div>Goalpost tracks your goal for the day so that people can see what you are working on and get motivation from you.</div>
+                <div>Taskque tracks your tasks so that you can trask what you are working on and stay focussed.</div>
             </Container>
             <Container>
                 <Day>{getFormattedDate(new Date(), "day")}</Day>

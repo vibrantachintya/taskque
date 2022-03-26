@@ -27,6 +27,12 @@ export const Signup = () => {
 
     const createUser = async (e) => {
         e.preventDefault();
+        if(!user.name || user.name.trim() == "")
+            return;
+        if(!user.email || user.email.trim() == "")
+            return;
+        if(!user.pwd || user.pwd.trim() == "")
+            return;
         await userSignupAPI(user);
         dispatch(setUserId(user.user_id));
         localStorage.setItem("user_id", user.user_id);
